@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/cobra.h"
-//#include "internal.h"
+#include "output.h"
 #include "benchmark.h"
 
 void add_test(struct testgroup *tg, const char *name, void (*pref)(void*), void (*f)(void*), void (*postf)(void*), void *arg){
@@ -68,9 +68,12 @@ void bench_run(BenchSet *bs){
 		for(tp=tgp->list;tp;tp=tp->next){
 			printf("\tRunning test: %s\n",tp->name);
 			run_test(tp);
-			printf("\t\tmin: %d | max: %d | avg: %d\n",tp->min,tp->max,tp->avg);
 		}
 	}
+
+	printf("\n\n");
+
+	print_table(bs);
 }
 
 void bench_free(BenchSet *bs){

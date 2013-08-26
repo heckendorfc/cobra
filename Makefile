@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-g -O0 -Wall -I/usr/local/include
 LDFLAGS=-L/usr/local/lib -o
-LIBS=
+LIBS=-lm
 
 ## Output programs
 LIBRARY=build/libcobra.a
@@ -10,7 +10,8 @@ ALL_PROGRAMS=$(LIBRARY)
 ## Output .o files
 LIBRARY_OBS=\
 src/benchmark.o\
-src/cobra.o
+src/cobra.o\
+src/output.o
 
 all: $(ALL_PROGRAMS)
 
