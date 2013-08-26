@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <limits.h>
 #include <sys/time.h>
 #include "../include/cobra.h"
